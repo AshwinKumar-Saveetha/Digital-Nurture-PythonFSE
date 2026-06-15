@@ -20,8 +20,8 @@ This module introduces learners to essential design principles and patterns that
 ### SOLID Principles:
 #### Single Responsibility:
 <img width="1172" height="918" alt="image" src="https://github.com/user-attachments/assets/346ca0d7-7497-40eb-b2f1-d13bc1102d9b" />
-##### important Points: 
 
+##### Important Points: 
 ```
 The Restaurant Analogy: Think of a class like a restaurant employee.
 
