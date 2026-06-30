@@ -1,20 +1,19 @@
 # Module 1 - Design Patterns and Principles
 
 ## Overview:
-This module introduces learners to essential design principles and patterns that are crucial for creating robust and maintainable software. Learners will delve into the SOLID principles, which include SRP, OCP, LSP, ISP, and DIP. They will also explore common design patterns, such as Creational, Structural, and Behavioral patterns, which provide reusable solutions to common design challenges. The module combines theoretical insights with practical exercises, helping learners understand and apply these concepts in their projects, ultimately enhancing their ability to write clean, efficient, and scalable code.
-
+This module introduces essential design principles and patterns that are crucial for creating robust and maintainable software
 # Self-Learning (Open-source links)
 
 | Status | Key Topics | Sub-topics | Learning Reference Links | Feedback |
 |----------|----------|----------|----------|----------|
-| [ ] | SOLID Principles | What & Why, The SOLID Principles of Object-Oriented Programming - The Single Responsibility Principle, The Open-Closed Principle, The Liskov Substitution Principle, The Interface Segregation Principle, The Dependency Inversion Principle | https://www.baeldung.com/solid-principles | |
-| [ ] | Commonly used Design Patterns | GoF, Creational Patterns - Singleton Pattern, Factory Method Pattern, Builder Pattern; Structural Patterns - Adapter Pattern, Decorator Pattern, Proxy Pattern; Behavioral Patterns - Observer Pattern, Strategy Pattern, Command Pattern; Architectural Patterns - Model-View-Controller (MVC), Dependency Injection | [https://medium.com/@softwaretechsolution/design-pattern-81ef65829de2](https://medium.com/@softwaretechsolution/design-pattern-81ef65829de2) | |
+| [✅] | SOLID Principles | What & Why, The SOLID Principles of Object-Oriented Programming - The Single Responsibility Principle, The Open-Closed Principle, The Liskov Substitution Principle, The Interface Segregation Principle, The Dependency Inversion Principle | https://www.baeldung.com/solid-principles | Practiced and Added ScreenShots |
+| [✅] | Commonly used Design Patterns | GoF, Creational Patterns - Singleton Pattern, Factory Method Pattern, Builder Pattern; Structural Patterns - Adapter Pattern, Decorator Pattern, Proxy Pattern; Behavioral Patterns - Observer Pattern, Strategy Pattern, Command Pattern; Architectural Patterns - Model-View-Controller (MVC), Dependency Injection | [https://medium.com/@softwaretechsolution/design-pattern-81ef65829de2](https://medium.com/@softwaretechsolution/design-pattern-81ef65829de2) |Practiced and Added ScreenShots |
 
 ---
 
 ## Module Completion
 
-- [ ] Module Completed
+- [✅] Module Completed
 
 ## Output of Practice:
 ### SOLID Principles:
@@ -23,16 +22,15 @@ This module introduces learners to essential design principles and patterns that
 
 ##### Important Points: 
 ```
-The Restaurant Analogy: Think of a class like a restaurant employee.
-
-The Chef (Book class): Their single job is preparing food. They chop, boil, fry, and season (these are their multiple "methods").
-
-The Waiter (BookPrinter class): Their single job is delivering the food to the customer. If you force the Chef to leave the kitchen and serve the tables, they now have two jobs, and the kitchen will inevitably fall apart!
+The Concept: A class should have only one reason to change, meaning it should only have one distinct job or responsibility. This keeps your code modular and prevents a change in one area from breaking an unrelated area.
+The Analogy: A chef cooks, and a waiter serves. If you force the chef to leave the kitchen and serve tables, the kitchen falls apart.
 ```
+#### Open/Closed Principle (OCP):
 
-### Overall Feedback
-__________________________________________________
+<img width="499" height="835" alt="image" src="https://github.com/user-attachments/assets/292f49a9-c811-4dd8-af25-0971a79fc16a" />
 
-__________________________________________________
-
-__________________________________________________
+##### Important Points:
+```
+The Concept: Software entities (classes, modules) should be open for extension but closed for modification. You should be able to add new functionality without changing existing, tested code.
+The Analogy: A coffee machine. If you want a new flavor, you plug in a new syrup pod (extension). You don't take a screwdriver and rewire the machine's motherboard (modification).
+```
