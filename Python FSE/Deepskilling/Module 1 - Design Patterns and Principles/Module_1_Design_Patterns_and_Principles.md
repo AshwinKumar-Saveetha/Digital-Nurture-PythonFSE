@@ -34,3 +34,12 @@ The Analogy: A chef cooks, and a waiter serves. If you force the chef to leave t
 The Concept: Software entities (classes, modules) should be open for extension but closed for modification. You should be able to add new functionality without changing existing, tested code.
 The Analogy: A coffee machine. If you want a new flavor, you plug in a new syrup pod (extension). You don't take a screwdriver and rewire the machine's motherboard (modification).
 ```
+### Common Design Patterns:
+#### 1. Singleton Pattern (Creational):
+
+<img width="778" height="948" alt="image" src="https://github.com/user-attachments/assets/da842208-4e73-4648-a616-14c72e23c9eb" />
+
+##### Important Points:
+```
+The Concept: Ensures a class has only one instance and provides a global point of access to it. It stops anyone from creating a duplicate object.
+```
