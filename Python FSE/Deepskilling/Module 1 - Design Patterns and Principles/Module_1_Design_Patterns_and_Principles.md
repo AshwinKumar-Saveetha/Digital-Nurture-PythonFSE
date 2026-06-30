@@ -43,3 +43,14 @@ The Analogy: A coffee machine. If you want a new flavor, you plug in a new syrup
 ```
 The Concept: Ensures a class has only one instance and provides a global point of access to it. It stops anyone from creating a duplicate object.
 ```
+#### MVC (Model-View-Controller):
+
+<img width="532" height="933" alt="image" src="https://github.com/user-attachments/assets/ac36641d-4e03-4d76-b2e9-758f6e615c5e" />
+
+##### Important Points:
+```
+The Concept: It splits your application into three distinct parts so they don't get tangled up:
+Model: The Data (Variables, databases, logic).
+View: The Display (What the user actually sees on screen).
+Controller: The Brain (Takes user input, updates the Model, and refreshes the View).
+```
