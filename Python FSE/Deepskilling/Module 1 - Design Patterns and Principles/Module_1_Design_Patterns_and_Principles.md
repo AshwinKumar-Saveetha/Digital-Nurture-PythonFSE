@@ -8,6 +8,7 @@ This module introduces essential design principles and patterns that are crucial
 |----------|----------|----------|----------|----------|
 | [✅] | SOLID Principles | What & Why, The SOLID Principles of Object-Oriented Programming - The Single Responsibility Principle, The Open-Closed Principle, The Liskov Substitution Principle, The Interface Segregation Principle, The Dependency Inversion Principle | https://www.baeldung.com/solid-principles | Practiced and Added ScreenShots |
 | [✅] | Commonly used Design Patterns | GoF, Creational Patterns - Singleton Pattern, Factory Method Pattern, Builder Pattern; Structural Patterns - Adapter Pattern, Decorator Pattern, Proxy Pattern; Behavioral Patterns - Observer Pattern, Strategy Pattern, Command Pattern; Architectural Patterns - Model-View-Controller (MVC), Dependency Injection | [https://medium.com/@softwaretechsolution/design-pattern-81ef65829de2](https://medium.com/@softwaretechsolution/design-pattern-81ef65829de2) |Practiced and Added ScreenShots |
+| [✅] | Check Understanding | Design Patterns Quiz | https://www.javaguides.net/2023/07/design-patterns-quiz.html | Completed the quiz successfully to test pattern recognition. |
 
 ---
 
