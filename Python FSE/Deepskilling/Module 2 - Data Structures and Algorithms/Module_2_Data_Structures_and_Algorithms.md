@@ -40,3 +40,8 @@ The Analogy: Looking for a word in a dictionary. You don't read page by page; yo
 The Concept: A simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order.
 The Analogy: People lining up by height for a photo. You compare yourself to the person next to you and swap if you are taller. Eventually, the tallest people "bubble" to the back of the line.
 ```
+
+<img width="1600" height="1453" alt="image" src="https://github.com/user-attachments/assets/26a28714-ae51-4dc2-91a7-30ae4b4cc4e5" />
+
+<img width="781" height="1280" alt="image" src="https://github.com/user-attachments/assets/828efa10-21a0-4ce8-9070-89fc23741982" />
+
