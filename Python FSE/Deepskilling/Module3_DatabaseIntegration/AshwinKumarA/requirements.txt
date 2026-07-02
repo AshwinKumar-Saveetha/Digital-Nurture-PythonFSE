@@ -1,0 +1,14 @@
+# Combined Python dependencies for the whole project
+# (ORM + Migrations exercises: Hands-On 6 and 7)
+
+SQLAlchemy>=2.0,<3.0
+mysql-connector-python>=8.0,<9.0
+alembic>=1.13,<2.0
+
+# Optional, only needed if you choose to run the SQL exercises
+# against PostgreSQL instead of MySQL:
+# psycopg2-binary>=2.9,<3.0
+
+# Optional, only needed for the MongoDB exercise if you want to
+# script it from Python instead of mongosh/Compass:
+# pymongo>=4.6,<5.0

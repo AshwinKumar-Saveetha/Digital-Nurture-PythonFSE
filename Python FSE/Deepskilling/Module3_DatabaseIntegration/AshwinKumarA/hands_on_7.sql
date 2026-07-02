@@ -1,0 +1,48 @@
+-- ============================================================
+-- Digital Nurture 5.0 - Module 3: Database Integration
+-- HANDS-ON 7 [Advanced]
+-- Migrations & Versioning - Alembic and Django Migrations
+-- ============================================================
+--
+-- ASSUMPTION / NOTE ON FILE LAYOUT:
+-- Hands-On 7 is a migrations exercise driven by the Alembic CLI,
+-- not plain SQL. To satisfy the required project layout (which
+-- lists hands_on_7.sql as a top-level file) while keeping runnable
+-- code in the right place, this file is kept as a documentation
+-- pointer. The actual, runnable Alembic project lives in:
+--
+--   migrations/alembic.ini             - Alembic configuration,
+--                                         sqlalchemy.url points at
+--                                         college_db_orm
+--   migrations/env.py                  - wires target_metadata to
+--                                         orm/models.py's Base.metadata
+--   migrations/script.py.mako          - template used to generate
+--                                         new revision files
+--   migrations/versions/initial_schema.py
+--                                       - Task 1 (Steps 92-97):
+--                                         baseline migration that
+--                                         creates departments,
+--                                         students, courses,
+--                                         enrollments, professors
+--   migrations/versions/add_is_active.py
+--                                       - Task 2 (Steps 98-101):
+--                                         adds students.is_active
+--   migrations/versions/add_course_schedule.py
+--                                       - Task 2 (Step 102):
+--                                         adds the course_schedules table
+--
+-- To run (from the migrations/ folder):
+--   pip install alembic sqlalchemy mysql-connector-python
+--   alembic upgrade head        -- Step 97 / 101 / 102: apply all migrations
+--   alembic current             -- Step 104: show current head revision
+--   alembic history --verbose   -- Step 103: show the full migration chain
+--   alembic downgrade -1        -- Step 105: step back one revision
+--   alembic downgrade base      -- Step 106: undo all migrations
+--   alembic upgrade head        -- Step 107: re-apply everything
+--
+-- See migrations/README for further Alembic setup notes.
+--
+-- (Bonus / Step 108, Django migrations equivalent):
+--   python manage.py makemigrations
+--   python manage.py migrate
+--   python manage.py migrate <app_name> <previous_migration_number>

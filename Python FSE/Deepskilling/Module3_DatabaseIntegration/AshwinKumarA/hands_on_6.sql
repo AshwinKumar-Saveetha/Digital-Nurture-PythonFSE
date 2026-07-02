@@ -1,0 +1,44 @@
+-- ============================================================
+-- Digital Nurture 5.0 - Module 3: Database Integration
+-- HANDS-ON 6 [Advanced]
+-- ORM Integration - SQLAlchemy & Django ORM
+-- ============================================================
+--
+-- ASSUMPTION / NOTE ON FILE LAYOUT:
+-- Hands-On 6 is a Python/ORM exercise, not a SQL exercise, so
+-- there is no meaningful SQL script to run for it. To satisfy the
+-- required project layout (which lists hands_on_6.sql as a
+-- top-level file) while keeping runnable code in the right place,
+-- this file is kept as a documentation/pointer file. The actual,
+-- runnable implementation lives in:
+--
+--   orm/models.py   - Task 1 (Steps 75-79): SQLAlchemy model
+--                      classes for Department, Student, Course,
+--                      Enrollment, Professor (+ later CourseSchedule),
+--                      relationships, and Base.metadata.create_all(engine)
+--                      to create the tables in college_db_orm.
+--
+--   orm/crud.py     - Task 2 (Steps 80-86): INSERT/READ/UPDATE/DELETE
+--                      via SQLAlchemy's Session API, with echo=True
+--                      logging enabled on the engine in models.py so
+--                      you can count SQL statements issued.
+--
+--                      Task 3 (Steps 87-91): the same READ query
+--                      rewritten with joinedload() to eliminate the
+--                      N+1 problem, plus a comment block at the top
+--                      of the file documenting the query-count
+--                      difference (13 queries -> 1 query).
+--
+-- To run:
+--   cd orm
+--   pip install -r requirements.txt
+--   python models.py   -- creates tables in college_db_orm
+--   python crud.py     -- runs the CRUD + N+1 / joinedload demo
+--
+-- See orm/README.md for full setup instructions.
+--
+-- (Bonus / Step 91, Django ORM select_related): a minimal Django
+-- models.py equivalent was supplied by the original exercise
+-- materials; Django's select_related() is the direct analogue of
+-- SQLAlchemy's joinedload() for eliminating N+1 queries:
+--   Enrollment.objects.select_related('student', 'course').all()

@@ -1,0 +1,15 @@
+Generic single-database configuration for Alembic (Hands-On 7).
+
+This folder tracks the schema history of college_db_orm as a chain
+of three revisions, matching the exercise book's Hands-On 7 steps:
+
+  1. initial_schema.py       - baseline: departments, students,
+                                courses, enrollments, professors
+                                (Task 1, Steps 92-97)
+  2. add_is_active.py        - adds students.is_active
+                                (Task 2, Steps 98-101)
+  3. add_course_schedule.py  - adds the course_schedules table
+                                (Task 2, Step 102)
+
+See ../hands_on_7.sql for the full list of Alembic CLI commands
+used to generate, apply, inspect and roll back these revisions.
