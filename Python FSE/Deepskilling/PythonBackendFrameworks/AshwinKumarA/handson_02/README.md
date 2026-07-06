@@ -565,6 +565,248 @@ Task 1 completed successfully:
 -   Course relationship verified
 -   Student ORM retrieval verified
 
+## Task 2: Django ORM Queries
+
+### Objective
+
+Use the Django ORM shell to complete the required Task 2 operations:
+
+1.  Create at least 2 Department objects.
+2.  Create at least 4 Course objects.
+3.  Create at least 5 Student objects.
+4.  Filter courses across a ForeignKey relationship.
+5.  Count courses per department using `annotate()` and `Count()`.
+6.  Fetch students with departments using `select_related()`.
+7.  Confirm SQL query count using `connection.queries`.
+8.  Increase all department budgets by 10% using an `F()` expression.
+
+### Open the Django Shell
+
+``` powershell
+python manage.py shell
+```
+
+Import the models:
+
+``` python
+from courses.models import Department, Course, Student, Enrollment
+```
+
+### Create Department Objects
+
+``` python
+dept = Department.objects.get(name="Computer Science")
+
+dept2 = Department.objects.create(
+    name="Information Technology",
+    head_of_dept="Dr. Priya",
+    budget=45000.00
+)
+```
+
+Verify:
+
+``` python
+Department.objects.all()
+```
+
+### Create and Verify 4 Course Objects
+
+The ORM data set contains:
+
+``` text
+Python Backend
+Database Systems
+Django Fundamentals
+Web Technologies
+```
+
+Example:
+
+``` python
+course2 = Course.objects.create(
+    name="Database Systems",
+    code="IT101",
+    credits=4,
+    department=dept2
+)
+
+course3 = Course.objects.create(
+    name="Django Fundamentals",
+    code="CS102",
+    credits=3,
+    department=dept
+)
+
+course4 = Course.objects.create(
+    name="Web Technologies",
+    code="IT102",
+    credits=3,
+    department=dept2
+)
+```
+
+Verify:
+
+``` python
+Course.objects.all()
+```
+
+### All Courses ORM Screenshot
+
+![All Courses ORM](images/output_04_all_courses_orm.png)
+
+### Create and Verify 5 Student Objects
+
+Students were created using `Student.objects.create(...)`.
+
+Example:
+
+``` python
+Student.objects.create(
+    first_name="Ajay",
+    last_name="Kumar",
+    email="ajay@gmail.com",
+    department=dept,
+    enrollment_year=2026
+)
+```
+
+Verify:
+
+``` python
+Student.objects.count()
+Student.objects.all()
+```
+
+### Five Students Screenshot
+
+![Five Students Created](images/output_07_five_students_created.png)
+
+### Filter Courses by Department
+
+``` python
+Course.objects.filter(
+    department__name="Computer Science"
+)
+```
+
+The double underscore traverses the ForeignKey relationship:
+
+``` text
+Course → Department → name
+```
+
+### Department Filter Screenshot
+
+![Filter Courses by
+Department](images/output_05_filter_by_department.png)
+
+### Count Courses per Department with `annotate()`
+
+``` python
+from django.db.models import Count
+
+Department.objects.annotate(
+    course_count=Count("course")
+).values("name", "course_count")
+```
+
+### Course Count Annotation Screenshot
+
+![Course Count Annotation](images/output_06_course_count_annotation.png)
+
+### Fetch Students and Departments with `select_related()`
+
+``` python
+students = Student.objects.select_related("department").all()
+```
+
+Display the related data:
+
+``` python
+for student in students:
+    print(
+        student.first_name,
+        student.last_name,
+        "-",
+        student.department.name
+    )
+```
+
+### Students with Department Screenshot
+
+![Select Related Students and
+Departments](images/output_08_select_related_students_department.png)
+
+### Confirm Query Count with `connection.queries`
+
+``` python
+from django.db import connection, reset_queries
+
+reset_queries()
+
+students = list(
+    Student.objects.select_related("department").all()
+)
+
+len(connection.queries)
+```
+
+Display the already-loaded related data:
+
+``` python
+for student in students:
+    print(
+        student.first_name,
+        student.last_name,
+        "-",
+        student.department.name
+    )
+
+print("Total SQL queries:", len(connection.queries))
+```
+
+This confirms that `select_related()` fetches students and their related
+departments efficiently in a single SQL query for this evaluated
+queryset.
+
+### Select Related Query Count Screenshot
+
+![Select Related Query
+Count](images/output_09_select_related_query_count.png)
+
+### Increase All Department Budgets by 10% Using `F()`
+
+``` python
+from django.db.models import F
+
+Department.objects.update(
+    budget=F("budget") * 1.1
+)
+```
+
+`F("budget")` refers to the current database value of the `budget`
+field. The calculation is performed directly in the database.
+
+### F Expression Budget Update Screenshot
+
+![Budget Update with F
+Expression](images/output_10_budget_update_f_expression.png)
+
+### Task 2 Completion Status
+
+Task 2 completed successfully:
+
+-   At least 2 Department objects available
+-   At least 4 Course objects available
+-   At least 5 Student objects available
+-   ForeignKey lookup with `department__name` completed
+-   Course counts generated with `annotate()` and `Count()`
+-   Students and departments fetched with `select_related()`
+-   SQL query count checked with `connection.queries`
+-   Department budgets increased by 10% with `F()`
+
 ## Author
 
 **Ashwin Kumar A**
