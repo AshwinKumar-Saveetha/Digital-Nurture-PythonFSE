@@ -50,7 +50,20 @@ handson_02/
 ├── images/
 │   ├── output_01_migrations_applied.png
 │   ├── output_02_department_orm.png
-│   └── output_03_student_orm.png
+│   ├── output_03_student_orm.png
+│   ├── output_04_all_courses_orm.png
+│   ├── output_05_filter_by_department.png
+│   ├── output_06_course_count_annotation.png
+│   ├── output_07_five_students_created.png
+│   ├── output_08_select_related_students_department.png
+│   ├── output_09_select_related_query_count.png
+│   ├── output_10_budget_update_f_expression.png
+│   ├── output_11_admin_home_models.png
+│   ├── output_12_course_admin_customization.png
+│   ├── output_13_admin_3_courses_created.png
+│   ├── output_14_admin_5_students_created.png
+│   ├── output_15_admin_4_enrollments_created.png
+│   └── output_16_duplicate_enrollment_error.png
 ├── db.sqlite3
 ├── manage.py
 ├── requirements.txt
@@ -806,6 +819,138 @@ Task 2 completed successfully:
 -   Students and departments fetched with `select_related()`
 -   SQL query count checked with `connection.queries`
 -   Department budgets increased by 10% with `F()`
+
+## Task 3: Django Admin Interface
+
+### Objective
+
+Use the Django Admin interface to:
+
+1.  Create a superuser.
+2.  Register `Department`, `Course`, `Student`, and `Enrollment`.
+3.  Customize Course admin with list columns, search, and department
+    filtering.
+4.  Create 3 Courses through the admin interface.
+5.  Create 5 Students through the admin interface.
+6.  Create 4 Enrollments through the admin interface.
+7.  Verify the Enrollment `unique_together` constraint by attempting to
+    enroll the same Student in the same Course twice.
+
+### Create Superuser
+
+``` powershell
+python manage.py createsuperuser
+```
+
+Successful result:
+
+``` text
+Superuser created successfully.
+```
+
+### Register Models and Customize Course Admin
+
+File: `courses/admin.py`
+
+``` python
+from django.contrib import admin
+from .models import Department, Course, Student, Enrollment
+
+
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ["name", "code", "credits", "department"]
+    search_fields = ["name", "code"]
+    list_filter = ["department"]
+
+
+admin.site.register(Department)
+admin.site.register(Student)
+admin.site.register(Enrollment)
+```
+
+### Run the Admin Site
+
+``` powershell
+python manage.py check
+python manage.py runserver
+```
+
+### Admin Home with Registered Models
+
+The admin home page confirms that all four application models are
+registered:
+
+-   Courses
+-   Departments
+-   Enrollments
+-   Students
+
+![Admin Home Models](images/output_11_admin_home_models.png)
+
+### Course Admin Customization
+
+The Course change-list page shows the configured columns, search box,
+and department filter.
+
+![Course Admin
+Customization](images/output_12_course_admin_customization.png)
+
+### Create 3 Courses Through Admin
+
+Three additional Course records were created through Django Admin. Four
+Course records already existed from the ORM task, so the final list
+contains seven records.
+
+![3 Courses Created Through
+Admin](images/output_13_admin_3_courses_created.png)
+
+### Create 5 Students Through Admin
+
+Five additional Student records were created through Django Admin. Five
+Student records already existed from the ORM task, so the final list
+contains ten records.
+
+![5 Students Created Through
+Admin](images/output_14_admin_5_students_created.png)
+
+### Create 4 Enrollments Through Admin
+
+Four Enrollment records were created through Django Admin using
+different Student-Course pairs.
+
+![4 Enrollments Created Through
+Admin](images/output_15_admin_4_enrollments_created.png)
+
+### Verify Duplicate Enrollment Constraint
+
+The `Enrollment` model contains:
+
+``` python
+class Meta:
+    unique_together = [["student", "course"]]
+```
+
+The same Student-Course pair was submitted a second time through Django
+Admin. Django rejected the duplicate and displayed a validation error.
+
+![Duplicate Enrollment
+Error](images/output_16_duplicate_enrollment_error.png)
+
+### Task 3 Completion Status
+
+Task 3 completed successfully:
+
+-   Superuser created
+-   All four models registered in Django Admin
+-   Course list columns configured
+-   Course search enabled
+-   Department filter enabled
+-   3 Courses created through Admin
+-   5 Students created through Admin
+-   4 Enrollments created through Admin
+-   Duplicate Student-Course enrollment rejected
+-   `unique_together` constraint verified through Admin
 
 ## Author
 
