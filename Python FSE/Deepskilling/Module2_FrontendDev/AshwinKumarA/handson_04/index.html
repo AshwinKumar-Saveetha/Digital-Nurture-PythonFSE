@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Portal</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h2 class="site-title">Student Portal</h2>
+
+        <p class="menu-placeholder">☰ Menu</p>
+
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#grades">Grades</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero -->
+
+        <section id="hero">
+
+            <h1>Welcome to the Student Portal</h1>
+
+            <p>
+                View your courses, profile, grades and academic information.
+            </p>
+
+            <button
+                type="button"
+                id="explore-courses">
+                Explore Courses
+            </button>
+
+        </section>
+
+        <!-- Student Statistics -->
+
+        <section class="student-stats">
+
+            <div class="stat-item">
+                <h3>Courses Enrolled</h3>
+                <p>5</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>GPA</h3>
+                <p>3.8</p>
+            </div>
+
+            <div class="stat-item">
+                <h3>Semester</h3>
+                <p>6</p>
+            </div>
+
+        </section>
+
+        <!-- Courses -->
+
+        <section id="courses">
+
+            <h2>My Courses</h2>
+
+            <div class="course-controls">
+
+                <input
+                    id="search-courses"
+                    type="text"
+                    placeholder="Search courses..."
+                    autocomplete="off">
+
+                <button
+                    id="sort-credits"
+                    type="button">
+
+                    Sort by Credits
+
+                </button>
+
+            </div>
+
+            <!-- Step 48 -->
+
+            <p id="course-loading" class="loading-message"></p>
+
+            <div class="course-grid"></div>
+
+            <p id="total-credits"></p>
+
+            <div id="selected-course">
+
+                Select a course card to view its grade.
+
+            </div>
+
+        </section>
+
+        <!-- Hands-On 4 -->
+
+        <!-- Step 51 -->
+
+        <section id="notifications">
+
+            <h2>Notifications</h2>
+
+            <p
+                id="notification-loading"
+                class="loading-message">
+            </p>
+
+            <div id="notification-list"></div>
+
+            <div id="notification-error"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+
+            &copy; 2026 Student Portal | Ashwin Kumar A
+
+        </p>
+
+    </footer>
+
+    <!-- Axios (Step 55) -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script
+        type="module"
+        src="app.js">
+    </script>
+
+</body>
+</html>
