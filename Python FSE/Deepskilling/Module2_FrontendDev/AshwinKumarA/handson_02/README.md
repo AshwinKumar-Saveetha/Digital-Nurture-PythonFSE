@@ -1,171 +1,141 @@
-# Hands-On 2: CSS Flexbox, Grid & Responsive Design
+# Hands-On 2 – CSS Flexbox, Grid & Responsive Design
 
-## Digital Nurture 5.0 -- Python Full Stack Engineer Track
+## Student Details
 
-**Module:** Frontend Development\
-**Hands-On:** 02\
-**Student:** Ashwin Kumar A
+**Name:** Ashwin Kumar A  
+**Track:** Python Full Stack Engineer  
+**Module:** Frontend Development  
+**Hands-On:** 2  
 
-------------------------------------------------------------------------
+---
 
 ## Objective
 
-This hands-on extends the **Student Portal** created in Hands-On 1 by
-implementing:
+The objective of this Hands-On is to continue the Student Portal developed in Hands-On 1 and make it responsive using CSS Flexbox, CSS Grid and media queries.
 
--   CSS Flexbox
--   CSS Grid
--   Mobile-First Responsive Design
--   Media Queries
--   Viewport Units
--   Fluid Typography using `clamp()`
+---
 
-------------------------------------------------------------------------
+# Task 1 – Flexbox Navigation & Header Layout
 
-# Task 1 -- Flexbox Navigation & Header Layout
+In this task, I updated the header, navigation, hero section and student statistics section using Flexbox.
 
-The existing Student Portal was enhanced using **CSS Flexbox**.
+## Steps Completed
 
-Implemented:
+- Applied `display: flex` to the header.
+- Used `align-items: center`.
+- Used `justify-content: space-between`.
+- Styled the navigation using Flexbox.
+- Added spacing between navigation links using `gap`.
+- Used Flexbox in the hero section.
+- Arranged the hero heading, paragraph and button vertically.
+- Added a student statistics bar below the hero section.
+- Added Courses Enrolled, GPA and Semester.
+- Arranged the statistics using Flexbox with equal spacing.
 
--   Flexbox header
--   Flexbox navigation
--   Flexbox hero section
--   Student Statistics Bar
--   Equal spacing between statistics
+## Task 1 Output
 
-## Expected Outcome
+![Task 1 Flexbox Output](images/task1-flexbox.png)
 
-✔ Header aligned correctly
+---
 
-✔ Navigation aligned horizontally
+# Task 2 – CSS Grid Course Card Layout
 
-✔ Hero content centered
+In this task, I arranged the course cards using CSS Grid.
 
-✔ Student statistics displayed correctly
+## Steps Completed
 
-### Desktop Screenshot
+- Wrapped the course articles inside a `<div class="course-grid">`.
+- Applied `display: grid` to `.course-grid`.
+- Initially tested a three-column grid using `repeat(3, 1fr)`.
+- Added spacing between cards using `gap`.
+- Added a minimum height to each course card.
+- Used `align-self: stretch`.
+- Added two more course cards.
+- Displayed a total of five course cards.
+- Tested `repeat(auto-fit, minmax(280px, 1fr))` and observed how the cards automatically reflow while resizing the browser.
 
-![Desktop](images/desktop-1280px.png)
+## Task 2 Output
 
-### Tablet Screenshot
+![Task 2 Grid Output](images/task2-grid.png)
 
-![Tablet](images/tablet-768px.png)
+---
 
-### Mobile Screenshot
+# Task 3 – Responsive Design with Media Queries
 
-![Mobile](images/mobile-375px.png)
+In this task, I rewrote the CSS using a mobile-first approach and added media queries for tablet and desktop layouts.
 
-------------------------------------------------------------------------
+## Steps Completed
 
-# Task 2 -- CSS Grid Course Card Layout
+- Used a single-column layout as the default mobile layout.
+- Displayed a hamburger placeholder on mobile.
+- Added a media query at `min-width: 768px`.
+- Displayed the full navigation bar at `768px`.
+- Changed the course grid to two columns at `768px`.
+- Added a media query at `min-width: 1024px`.
+- Changed the course grid to three columns at `1024px`.
+- Increased the hero section padding at `1024px`.
+- Set the hero section minimum height to `40vh`.
+- Used `clamp(1.5rem, 3vw, 2.5rem)` for the site title.
+- Tested the layout at 375px, 768px and 1280px.
+- Checked that there was no overflow or layout break.
 
-Implemented:
+## Mobile View – 375px
 
--   Wrapped course cards inside `.course-grid`
--   Applied CSS Grid
--   Added five course cards
--   Responsive grid layout
--   Equal spacing
--   Minimum height for cards
+At 375px, the course cards are displayed in one column and the mobile menu placeholder is visible.
 
-## Expected Outcome
+![Mobile View at 375px](images/mobile-375px.png)
 
-✔ Five course cards displayed
+## Tablet View – 768px
 
-✔ Cards stretch uniformly
+At 768px, the full navigation bar is visible and the course cards are displayed in two columns.
 
-✔ Responsive grid works correctly
+![Tablet View at 768px](images/tablet-768px.png)
 
-### Desktop Screenshot
+## Desktop View – 1280px
 
-![Desktop Grid](images/desktop-1280px.png)
+At 1280px, the full navigation bar is visible, the hero section has more padding and the course cards are displayed in three columns.
 
-### Tablet Screenshot
+![Desktop View at 1280px](images/desktop-1280px.png)
 
-![Tablet Grid](images/tablet-768px.png)
+---
 
-### Mobile Screenshot
+# Files Used
 
-![Mobile Grid](images/mobile-375px.png)
-
-------------------------------------------------------------------------
-
-# Task 3 -- Responsive Design with Media Queries
-
-Implemented:
-
--   Mobile-first CSS
--   768px breakpoint
--   1024px breakpoint
--   Hero `min-height: 40vh`
--   Fluid typography using `clamp()`
-
-## Expected Outcome
-
-### Mobile (375px)
-
--   Hamburger placeholder visible
--   Navigation hidden
--   One-column course layout
-
-![375px](images/mobile-375px.png)
-
-### Tablet (768px)
-
--   Full navigation visible
--   Two-column course grid
-
-![768px](images/tablet-768px.png)
-
-### Desktop (1280px)
-
--   Three-column course grid
--   Increased hero padding
--   Full navigation
-
-![1280px](images/desktop-1280px.png)
-
-------------------------------------------------------------------------
-
-# Files
-
-``` text
+```text
 handson_02
 ├── index.html
 ├── styles.css
 ├── README.md
 └── images
+    ├── task1-flexbox.png
+    ├── task2-grid.png
     ├── mobile-375px.png
     ├── tablet-768px.png
     └── desktop-1280px.png
 ```
 
-------------------------------------------------------------------------
+---
 
 # Steps Completed
 
--   Step 14 ✔
--   Step 15 ✔
--   Step 16 ✔
--   Step 17 ✔
--   Step 18 ✔
--   Step 19 ✔
--   Step 20 ✔
--   Step 21 ✔
--   Step 22 ✔
--   Step 23 ✔
--   Step 24 ✔
--   Step 25 ✔
--   Step 26 ✔
--   Step 27 ✔
--   Step 28 ✔
+- Step 14: Continued from the existing Hands-On 1 files.
+- Step 15: Applied Flexbox to the header with centred alignment and space between items.
+- Step 16: Styled the navigation as a Flexbox container with spacing between links.
+- Step 17: Created the hero section using Flexbox with a column layout.
+- Step 18: Added the student statistics bar using Flexbox.
+- Step 19: Wrapped all course articles inside `.course-grid`.
+- Step 20: Applied CSS Grid and tested a three-column layout.
+- Step 21: Added minimum height and stretching to the course cards.
+- Step 22: Added two additional cards to make a total of five.
+- Step 23: Tested `auto-fit` and `minmax()` for automatic grid reflow.
+- Step 24: Rewrote the CSS using a mobile-first approach.
+- Step 25: Added the `768px` media query with two columns and full navigation.
+- Step 26: Added the `1024px` media query with three columns and increased hero padding.
+- Step 27: Used `40vh` and `clamp()` for a fluid layout.
+- Step 28: Tested the portal at 375px, 768px and 1280px.
 
-------------------------------------------------------------------------
+---
 
-# Conclusion
+# Result
 
-The Student Portal was successfully enhanced with Flexbox, CSS Grid, and
-Responsive Design. The application was tested successfully at **375px**,
-**768px**, and **1280px**, satisfying the expected outcomes for all
-three tasks of Hands-On 2.
+I completed Hands-On 2 successfully. The Student Portal uses Flexbox for the header, navigation, hero and statistics bar. It uses CSS Grid for the five course cards and works correctly on mobile, tablet and desktop screen sizes.
