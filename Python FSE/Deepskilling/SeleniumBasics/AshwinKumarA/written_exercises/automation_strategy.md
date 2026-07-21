@@ -2,7 +2,6 @@
 **Hands-On 3 Submission**  
 **Author:** Ashwin Kumar A
 
-> Student submission prepared according to the Hands-On 3 requirements.
 
 # Task 1: Automation Decision and Test Case Selection
 
