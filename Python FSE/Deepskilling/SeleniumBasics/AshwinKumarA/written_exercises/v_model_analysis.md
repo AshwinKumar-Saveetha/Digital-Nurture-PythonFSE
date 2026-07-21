@@ -2,8 +2,6 @@
 **Hands-On 2 Submission**  
 **Author:** Ashwin Kumar A
 
-> Student submission prepared according to the Hands-On 2 requirements.
-
 # Task 1: V-Model Mapping
 
 ## 9. V-Model
