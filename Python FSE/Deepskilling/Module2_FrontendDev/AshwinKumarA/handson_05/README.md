@@ -56,12 +56,6 @@ student-portal-react/
 
 ## Screenshot
 
-> Place the following image here after uploading to GitHub.
-
-``` text
-images/task1-student-portal-home.png
-```
-
 ![Task 1](images/task1-student-portal-home.png)
 
 ------------------------------------------------------------------------
