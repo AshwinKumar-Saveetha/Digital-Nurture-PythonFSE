@@ -2,8 +2,6 @@
 **Hands-On 1 Submission**  
 **Author:** Ashwin Kumar A
 
-> This submission is prepared as a student's work based strictly on the tasks in the Selenium Basics Hands-On Exercise Book.
-
 # Task 1: Map Testing Types to a Real System
 
 ## 1. Test Levels
