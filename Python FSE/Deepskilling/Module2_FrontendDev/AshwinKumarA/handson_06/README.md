@@ -14,25 +14,25 @@ React Router DOM v6 was installed and configured. The application was wrapped us
 
 ## React Router Installation
 
-![React Router Installed](screenshots/HS6_Task1_01_React_Router_Installed.png)
+![React Router Installed](images/HS6_Task1_01_React_Router_Installed.png)
 
 React Router was successfully installed and verified.
 
 ## Routing Configuration
 
-![Routing Configuration](screenshots/HS6_Task1_02_Routing_Code.png)
+![Routing Configuration](images/HS6_Task1_02_Routing_Code.png)
 
 Routes were created using `Routes` and `Route`. Navigation between pages is performed using `Link`.
 
 ## Dynamic Course Details
 
-![Course Details](screenshots/HS6_Task1_03_Course_Details.png)
+![Course Details](images/HS6_Task1_03_Course_Details.png)
 
 Dynamic routing was implemented using `useParams()` to display the selected course information.
 
 ## Profile Redirection
 
-![Profile Redirect](screenshots/HS6_Task1_04_Enroll_Profile_Redirect.png)
+![Profile Redirect](images/HS6_Task1_04_Enroll_Profile_Redirect.png)
 
 After enrolling in a course, `useNavigate()` redirects the user to the Profile page.
 
@@ -44,19 +44,19 @@ A Context Provider was created to share enrollment information across multiple c
 
 ## Enrollment Context
 
-![Enrollment Context](screenshots/HS6_Task2_01_Enrollment_Context.png)
+![Enrollment Context](images/HS6_Task2_01_Enrollment_Context.png)
 
 The provider stores enrolled courses and exposes enroll and remove functions.
 
 ## Shared State
 
-![Context Shared State](screenshots/HS6_Task2_02_Context_Shared_State.png)
+![Context Shared State](images/HS6_Task2_02_Context_Shared_State.png)
 
 The Header and Profile page access the same shared state using `useContext()`.
 
 ## Remove Course
 
-![Remove Course](screenshots/HS6_Task2_03_Remove_Course.png)
+![Remove Course](images/HS6_Task2_03_Remove_Course.png)
 
 Students can remove enrolled courses directly from the Profile page.
 
@@ -68,19 +68,19 @@ The Context implementation was replaced with Redux Toolkit for centralized state
 
 ## Redux Setup
 
-![Redux Setup](screenshots/HS6_Task3_01_Redux_Setup.png)
+![Redux Setup](images/HS6_Task3_01_Redux_Setup.png)
 
 A Redux Store and Enrollment Slice were created using `configureStore()` and `createSlice()`.
 
 ## Shared Redux State
 
-![Redux Shared State](screenshots/HS6_Task3_02_Redux_Shared_State.png)
+![Redux Shared State](images/HS6_Task3_02_Redux_Shared_State.png)
 
 Components access Redux state using `useSelector()` and update it using `useDispatch()`.
 
 ## Redux DevTools
 
-![Redux DevTools](screenshots/HS6_Task3_03_Redux_DevTools.png)
+![Redux DevTools](images/HS6_Task3_03_Redux_DevTools.png)
 
 Redux DevTools confirms that enroll and unenroll actions are dispatched successfully.
 
@@ -88,7 +88,7 @@ Redux DevTools confirms that enroll and unenroll actions are dispatched successf
 
 # Final Output
 
-![Final Output](screenshots/HS6_Final_Output.png)
+![Final Output](images/HS6_Final_Output.png)
 
 The completed Student Portal application supports routing, dynamic pages, enrollment management and centralized state management using Redux Toolkit.
 
