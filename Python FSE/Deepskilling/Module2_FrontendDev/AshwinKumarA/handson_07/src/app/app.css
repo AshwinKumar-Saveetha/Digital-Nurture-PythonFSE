@@ -1,0 +1,20 @@
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
+.site-footer {
+  padding: 24px 16px;
+  text-align: center;
+  color: #243000;
+  background-color: #bfd42f;
+}
+
+.site-footer p {
+  margin: 0;
+}

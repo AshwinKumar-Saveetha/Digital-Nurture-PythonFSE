@@ -1,0 +1,19 @@
+.course-code {
+  padding: 6px 10px;
+  color: #243000;
+  background-color: #bfd42f;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.course-grade {
+  color: #708000;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(120, 140, 20, 0.2);
+}

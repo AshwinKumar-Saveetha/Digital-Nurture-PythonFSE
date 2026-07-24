@@ -1,0 +1,62 @@
+<main class="course-page">
+  <section class="course-heading">
+    <p class="section-label">Hands-On 07</p>
+
+    <h1>Angular Services & Dependency Injection</h1>
+
+    <p>
+      Courses are loaded from an external API using Angular HttpClient and
+      CourseService.
+    </p>
+  </section>
+
+  <section class="course-content">
+    <div class="search-container">
+      <label for="course-search">Search Courses</label>
+
+      <input
+        id="course-search"
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Search by course title..."
+        [disabled]="loading"
+      />
+    </div>
+
+    <div *ngIf="loading" class="loading-container">
+      <div class="spinner" aria-label="Loading"></div>
+      <p>Loading courses...</p>
+    </div>
+
+    <ng-container *ngIf="!loading">
+      <p class="result-count">
+        {{ filteredCourses.length }}
+        {{ filteredCourses.length === 1 ? 'course' : 'courses' }} found
+      </p>
+
+      <div
+        *ngIf="filteredCourses.length > 0"
+        class="course-grid"
+      >
+        <app-course-card
+          *ngFor="
+            let course of filteredCourses;
+            trackBy: trackCourseById
+          "
+          [name]="course.title"
+          [code]="'POST-' + course.id"
+          [credits]="3"
+          [grade]="'A'"
+        ></app-course-card>
+      </div>
+
+      <div
+        *ngIf="filteredCourses.length === 0"
+        class="no-results"
+      >
+        <h2>No courses found</h2>
+        <p>Try searching with another course title.</p>
+      </div>
+    </ng-container>
+  </section>
+</main>

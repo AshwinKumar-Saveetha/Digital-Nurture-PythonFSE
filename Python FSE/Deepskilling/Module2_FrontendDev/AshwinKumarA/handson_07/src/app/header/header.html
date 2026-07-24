@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="header-container">
+    <a class="site-title" routerLink="/">
+      Student Portal
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a
+        routerLink="/"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Courses
+      </a>
+
+      <a
+        routerLink="/profile"
+        routerLinkActive="active-link"
+      >
+        Profile
+      </a>
+    </nav>
+  </div>
+</header>

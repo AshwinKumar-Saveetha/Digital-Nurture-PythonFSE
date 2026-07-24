@@ -1,0 +1,136 @@
+.course-page {
+  min-height: calc(100vh - 72px);
+  padding-bottom: 50px;
+}
+
+.course-heading {
+  padding: 48px 24px;
+  text-align: center;
+  color: #243000;
+  background: linear-gradient(135deg, #bfd42f, #d8e878);
+}
+
+.section-label {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.course-heading h1 {
+  margin-bottom: 12px;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+.course-heading p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.course-content {
+  width: min(1120px, calc(100% - 32px));
+  margin: 36px auto 0;
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-container label {
+  display: block;
+  margin-bottom: 8px;
+  color: #25334d;
+  font-weight: 700;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 13px 15px;
+  color: #17233b;
+  background-color: #ffffff;
+  border: 1px solid #b9c4d1;
+  border-radius: 8px;
+  font: inherit;
+  outline: none;
+}
+
+.search-container input:focus {
+  border-color: #bfd42f;
+  box-shadow: 0 0 0 3px rgba(191, 212, 47, 0.3);
+}
+
+.result-count {
+  margin: 22px 0 16px;
+  color: #5f6b7a;
+  font-weight: 600;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.no-results {
+  margin-top: 28px;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px dashed #9caabd;
+  border-radius: 12px;
+}
+
+.no-results h2 {
+  margin-bottom: 8px;
+  color: #25334d;
+}
+
+.no-results p {
+  color: #687587;
+}
+
+@media (max-width: 600px) {
+  .course-heading {
+    padding: 36px 18px;
+  }
+
+  .course-content {
+    width: min(100% - 24px, 1120px);
+  }
+}
+
+.loading-container {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #596500;
+  font-weight: 700;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #edf4b9;
+  border-top-color: #bfd42f;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.search-container input:disabled {
+  cursor: not-allowed;
+  background-color: #f6f9df;
+  opacity: 0.7;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
