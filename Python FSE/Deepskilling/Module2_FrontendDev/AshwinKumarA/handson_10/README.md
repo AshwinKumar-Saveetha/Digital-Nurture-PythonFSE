@@ -162,7 +162,7 @@ completely.
 ------------------------------------------------------------------------
 
 # Comparison of State Management
-
+```
   Feature       React + Redux Toolkit   Angular + NgRx   Vue + Pinia
   ------------- ----------------------- ---------------- ---------------
   State         Store                   Store            Store
@@ -172,7 +172,7 @@ completely.
   DevTools      Redux DevTools          NgRx DevTools    Vue DevTools
 
 ------------------------------------------------------------------------
-
+```
 # Conclusion
 
 This project demonstrates best practices for building modern React
