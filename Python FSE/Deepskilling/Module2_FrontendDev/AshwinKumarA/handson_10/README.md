@@ -4,22 +4,6 @@
 
 ## API Integration & Advanced State Management
 
-------------------------------------------------------------------------
-
-## Student Information
-
-  Particular          Details
-  ------------------- -------------------------------
-  **Student Name**    Ashwin Kumar
-  **Project Title**   Student Portal
-  **Framework**       React + Redux Toolkit
-  **Module**          Frontend Development
-  **Hands-On**        10
-  **Organization**    Cognizant Digital Nurture 5.0
-
-------------------------------------------------------------------------
-
-
 # Project Folder Structure
 
 ``` text
