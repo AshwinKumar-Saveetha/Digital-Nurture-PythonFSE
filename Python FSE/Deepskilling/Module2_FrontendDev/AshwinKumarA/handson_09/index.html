@@ -1,0 +1,297 @@
+<!--
+Hands-On 09 - Accessibility and Compatibility Audit
+
+Initial Lighthouse Accessibility Score: 87
+
+Initial issues flagged:
+1. Buttons do not have an accessible name.
+2. Some elements have a tabindex value greater than 0.
+3. Heading elements were not in sequentially descending order.
+
+Task 1 results:
+- Corrected the heading hierarchy.
+- Added a visible label to the course search input.
+- Verified semantic buttons and accessible button names.
+- Confirmed that no img elements are used.
+- Identified browser-extension-generated accessibility issues.
+- Retested in an InPrivate window with extensions disabled.
+
+Improved Lighthouse Accessibility Score: 100
+
+Task 2 results:
+- Added aria-label="Main navigation".
+- Added aria-current="page" to the active Home link.
+- Made course cards keyboard focusable with tabindex="0".
+- Added Enter-key activation to course cards.
+- Added role="status" and aria-live="polite" to dynamic status updates.
+- Added an expandable mobile menu with aria-expanded.
+- Completed keyboard-only navigation testing.
+
+Task 3 colour contrast:
+Before:
+- Header background: #005522
+- Primary action background: #007a1f
+- Primary text on actions: #ffffff
+
+After:
+- Primary theme background: #bfd42f
+- Primary theme text: #1f2a00
+- Approximate contrast ratio: 9.12:1
+- WCAG AA normal-text requirement: 4.5:1
+- Result: Pass
+
+Cross-browser feature support:
+- Feature checked: CSS Grid Layout (Level 1).
+- Support source: caniuse.com.
+- Status: Widely available across major browsers.
+- Global browser usage shown: 95.36%.
+- Chrome: Supported.
+- Microsoft Edge: Supported.
+- Safari: Supported.
+- Firefox: Supported.
+- Opera: Supported.
+- Chrome for Android: Supported.
+- Safari on iOS: Supported.
+- Samsung Internet: Supported.
+- Internet Explorer: Partial support for the older Grid specification.
+- A Flexbox fallback is included using @supports for browsers without standard CSS Grid support.
+
+Cross-browser testing:
+- Google Chrome: Layout and functionality verified with no major issues.
+- Firefox: Layout and functionality verified with no major issues.
+- CSS Grid, Flexbox, CSS variables, responsive breakpoints and keyboard interactions worked consistently.
+- Minor differences were limited to normal browser font rendering.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Student Portal</title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <p class="site-title">
+            Student Portal
+        </p>
+
+        <button
+            type="button"
+            id="menu-button"
+            class="menu-placeholder"
+            aria-label="Open main navigation"
+            aria-expanded="false"
+            aria-controls="main-navigation"
+        >
+            ☰ Menu
+        </button>
+
+        <nav
+            id="main-navigation"
+            aria-label="Main navigation"
+        >
+            <ul>
+                <li>
+                    <a
+                        href="#hero"
+                        aria-current="page"
+                    >
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#courses">
+                        Courses
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#profile">
+                        Profile
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#grades">
+                        Grades
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section
+            id="hero"
+            aria-labelledby="main-heading"
+        >
+            <h1 id="main-heading">
+                Welcome to the Student Portal
+            </h1>
+
+            <p>
+                View your courses, profile, grades and academic information.
+            </p>
+
+            <button
+                type="button"
+                id="explore-courses"
+                aria-label="Explore available courses"
+            >
+                Explore Courses
+            </button>
+        </section>
+
+        <section
+            class="student-stats-section"
+            aria-labelledby="student-overview-heading"
+        >
+            <h2
+                id="student-overview-heading"
+                class="section-heading"
+            >
+                Student Overview
+            </h2>
+
+            <div class="student-stats">
+
+                <article class="stat-item">
+                    <h3>Courses Enrolled</h3>
+                    <p>5</p>
+                </article>
+
+                <article class="stat-item">
+                    <h3>GPA</h3>
+                    <p>3.8</p>
+                </article>
+
+                <article class="stat-item">
+                    <h3>Semester</h3>
+                    <p>6</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section
+            id="courses"
+            aria-labelledby="courses-heading"
+        >
+            <h2 id="courses-heading">
+                My Courses
+            </h2>
+
+            <div class="course-controls">
+
+                <div class="search-control">
+
+                    <label for="search-courses">
+                        Search courses
+                    </label>
+
+                    <input
+                        id="search-courses"
+                        name="search-courses"
+                        type="search"
+                        placeholder="Enter a course name"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+                <button
+                    id="sort-credits"
+                    type="button"
+                    aria-label="Sort courses by credits in descending order"
+                >
+                    Sort by Credits
+                </button>
+
+            </div>
+
+            <p
+                id="course-loading"
+                class="loading-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+            <div class="course-grid"></div>
+
+            <p id="total-credits"></p>
+
+            <div
+                id="selected-course"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+            >
+                Select a course card to view its grade.
+            </div>
+
+        </section>
+
+        <section
+            id="notifications"
+            aria-labelledby="notifications-heading"
+        >
+            <h2 id="notifications-heading">
+                Notifications
+            </h2>
+
+            <p
+                id="notification-loading"
+                class="loading-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+            <div id="notification-list"></div>
+
+            <div id="notification-error"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2026 Student Portal | Ashwin Kumar A
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2/dist/css-vars-ponyfill.min.js"></script>
+
+    <script>
+        cssVars({
+            onlyLegacy: true
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script
+        type="module"
+        src="app.js"
+    ></script>
+
+</body>
+
+</html>
