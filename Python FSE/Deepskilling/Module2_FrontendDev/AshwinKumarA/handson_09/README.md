@@ -4,7 +4,7 @@
 
 **Student Name:** Ashwin Kumar A\
 **Track:** Python Full Stack Engineer\
-**Program:** Cognizant Digital Nurture 5.0\
+**Program:** Cognizant Digital Nurture 5.0
 
 ## Project Overview
 
@@ -134,20 +134,6 @@ handson_09
 
 ------------------------------------------------------------------------
 
-
-# Screenshots
-
-  Screenshot                                  Description
-  ------------------------------------------- ---------------------------
-  task1_01_initial_accessibility_audit.png    Initial audit
-  task1_02_improved_accessibility_audit.png   Improved accessibility
-  task2_01_keyboard_navigation.png            Keyboard navigation
-  task3_01_colour_contrast_check.png          Colour contrast
-  task3_02_css_grid_browser_support.png       CSS Grid support
-  task3_03_cross_browser_testing.png          Cross-browser testing
-  task3_04_final_accessibility_audit.png      Final accessibility audit
-
-------------------------------------------------------------------------
 
 # Conclusion
 
