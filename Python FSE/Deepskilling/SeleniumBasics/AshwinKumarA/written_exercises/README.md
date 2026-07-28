@@ -8,9 +8,9 @@ This folder contains my written Hands-On exercises completed as part of the **Di
 
 ## Folder Contents
 
-### handson_01
+### [handson_01](./handson_01/)
 
-**File:** `qa_concepts.md`
+**File:** [`qa_concepts.md`](./handson_01/qa_concepts.md)
 
 Topics covered:
 
@@ -24,9 +24,9 @@ Topics covered:
 
 ---
 
-### handson_02
+### [handson_02](./handson_02/)
 
-**File:** `v_model_analysis.md`
+**File:** [`v_model_analysis.md`](./handson_02/v_model_analysis.md)
 
 Topics covered:
 
@@ -39,9 +39,9 @@ Topics covered:
 
 ---
 
-### handson_03
+### [handson_03](./handson_03/)
 
-**File:** `automation_strategy.md`
+**File:** [`automation_strategy.md`](./handson_03/automation_strategy.md)
 
 Topics covered:
 
